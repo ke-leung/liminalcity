@@ -10,7 +10,7 @@ An interactive art installation, designed to connect art with technology and hum
 # Conceptual Design
 
 The concept was inspired by Yayoi Kusama's Infinity Mirrors exhibit, where the participant is inserted into the installation, and becomes a medium for the creation of art.
-Isometric drawings were drafted of a model city containing 5 buildings, each with unique designs and electrical components, such as ultrasonic, touch, or motion sensors, and RGB LEDs. 
+Isometric drawings were drafted of a model city containing 5 buildings, each with unique designs and electrical components, such as ultrasonic, touch, or motion sensors, and RGB LEDs. Human interaction with the installation effects changes in the box.
 
 ![building_overview](https://user-images.githubusercontent.com/55610111/134189472-c1601cb9-eeda-4bb8-980c-aadaf039a14a.jpg)
 

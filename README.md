@@ -7,11 +7,10 @@ An interactive art installation, designed to connect art with technology and hum
 
 [Image description: Final iteration of the installation]
 
-
 # Conceptual Design
 
-The concept was inspired by Yayoi Kusama's Infinity Mirrors exhibit, where the participant is inserted into the installation and they become a medium for the creation of art.
-Isometric drawings were drafted of a model city, including electronic components.
+The concept was inspired by Yayoi Kusama's Infinity Mirrors exhibit, where the participant is inserted into the installation, and becomes a medium for the creation of art.
+Isometric drawings were drafted of a model city containing 5 buildings, each with unique designs and electrical components, such as ultrasonic, touch, or motion sensors, and RGB LEDs. 
 
 ![building_overview](https://user-images.githubusercontent.com/55610111/134189472-c1601cb9-eeda-4bb8-980c-aadaf039a14a.jpg)
 
@@ -21,3 +20,10 @@ Isometric drawings were drafted of a model city, including electronic components
 
 [Image description: Orthographic and isometric engineering drawings of the fourth building]
 
+# REQUIREMENTS
+
+- Arduino Nano
+
+# DEPENDENCIES
+
+FastLED: https://github.com/FastLED/FastLED

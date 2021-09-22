@@ -49,9 +49,7 @@ void setup() {
  pinMode(U3_TRIG, OUTPUT);
 
  //set default lights
-  for (int led = 0; led < 15; led++) {
   setLedColor();
- }
 }
 
 void setLedColor()  {
@@ -104,7 +102,7 @@ int readUltrasonic(uint8_t echoPin, uint8_t trigPin) {
  return duration * 0.034/2;
 }
 
-//TODO
+//Returns whether or not motion is detected
 bool readIRSensor() {
  return digitalRead(IR_PIN) == HIGH;
 }
@@ -114,34 +112,53 @@ bool readTouchSensor() {
  return digitalRead(TOUCH_PIN) == HIGH;
 }
 
-
-char buf[512];
-void loop() {
-
 //Handle ultrasonic building 4 effects
+void handleUltrasonic4(){
   float distance = readUltrasonic(U4_ECHO, U4_TRIG);
-  if (distance > 0 && distance < 16) {        
-    auto const currColour1 = CRGB(75,12,200);
-    auto const currColour2 = CRGB(125, 200, 35);
-
-    float fractVal1 = 1 / distance;
-    fractVal1 = fractVal1 * 275;
-    float fractVal2 = fractVal1 * 1.3;
+  auto const currColour = CRGB(75,12,200);
+  
+  if (distance > 0 && distance < 17) {        
+    float fractVal = 1 / distance;
+    fractVal = fractVal * 300;
     
-    auto const newColour1 = blend(currColour1, CRGB::Red, fractVal1);
-    auto const newColour2 = blend(currColour2, CRGB::Red, fractVal2);
+    auto const newColour = blend(currColour, CRGB::Red, fractVal);
 
-    leds[11] = newColour1;
-    leds[14] = newColour1;
-    leds[3] = newColour2;
-    leds[6] = newColour2;
+    leds[11] = newColour;
+    leds[14] = newColour;
     FastLED.show();
 
     if (distance < 4.00){
       //trigger flashing sequence
     }
   }
+}
 
+//Handle ultrasonic building 3 effects
+void handleUltrasonic3(){
+  float distance = readUltrasonic(U3_ECHO, U3_TRIG);  
+  auto const currColour = CRGB(125, 200, 35);
+
+  if (distance > 0 && distance < 13) {
+    float fractVal = 1 / distance;
+    fractVal = fractVal * 350;
+    
+    auto const newColour = blend(currColour, CRGB::Red, fractVal);
+    
+    leds[3] = newColour;
+    leds[6] = newColour;
+    FastLED.show();
+    
+    if (distance < 4.00){
+      //trigger flashing sequence
+    }
+  }
+}
+
+void loop() {
+
+  handleUltrasonic4();
+  handleUltrasonic3();
+  
 
 // //Handle all other cases
 //  else {
@@ -153,16 +170,4 @@ void loop() {
 //    leds[ledNum] = colour;
 //  }
 
-
-// //Print all sensor details to `buf`
-// sprintf(
-//  buf,
-//  "U4: %dcm\nU3: %dcm\nTouch: %s\nIR: %s\n",
-//  readUltrasonic(U4_ECHO, U4_TRIG),
-//  readUltrasonic(U3_ECHO, U3_TRIG),
-//  (readTouchSensor() ? "yes" : "no"),
-//  (readIRSensor() ? "yes" : "no")
-//  );
-//// //Print `buf` to the serial console
-//Serial.print(buf);
 }

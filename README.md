@@ -2,8 +2,8 @@
 
 An interactive art installation, designed to connect art, people, and technology.
 
-![limcity2](https://user-images.githubusercontent.com/55610111/134188276-8ae5665c-139a-4664-a2ef-16475c66e25b.jpg) 
 ![limcity3](https://user-images.githubusercontent.com/55610111/134265166-cee21028-71d9-4c14-b293-cc5ced2a91d8.jpg)
+![limcity2](https://user-images.githubusercontent.com/55610111/134188276-8ae5665c-139a-4664-a2ef-16475c66e25b.jpg) 
 
 [Image description: Final iteration of the installation]
 
